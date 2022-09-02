@@ -2068,6 +2068,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "VehiculosTransporte.App.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/VehiculosTransporte.App.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VehiculosTransporte.App.Dominio.dll": {}
+        }
       }
     }
   },
@@ -7236,6 +7246,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "VehiculosTransporte.App.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../VehiculosTransporte.App.Dominio/VehiculosTransporte.App.Dominio.csproj",
+      "msbuildProject": "../VehiculosTransporte.App.Dominio/VehiculosTransporte.App.Dominio.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7243,7 +7258,8 @@
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.0",
+      "VehiculosTransporte.App.Dominio >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7269,7 +7285,11 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj": {
+              "projectPath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
