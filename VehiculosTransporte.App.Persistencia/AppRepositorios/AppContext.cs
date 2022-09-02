@@ -3,7 +3,7 @@ using VehiculosTransporte.App.Dominio;
 
 namespace VehiculosTransporte.App.Persistencia
 {
-    public class Appcontext : DbContext
+    public class AppContext : DbContext
     {
         public DbSet<Persona> Personas{get;set;}
 

@@ -8,8 +8,8 @@ using VehiculosTransporte.App.Persistencia;
 
 namespace VehiculosTransporte.App.Persistencia.Migrations
 {
-    [DbContext(typeof(Appcontext))]
-    [Migration("20220902220001_Initial")]
+    [DbContext(typeof(AppContext))]
+    [Migration("20220902231221_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

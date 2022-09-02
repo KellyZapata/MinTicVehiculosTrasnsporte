@@ -180,19 +180,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kelly\\.nuget\\packages\\": {}
+    "C:\\Users\\xteam\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj",
       "projectName": "VehiculosTransporte.App.Dominio",
-      "projectPath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj",
-      "packagesPath": "C:\\Users\\kelly\\.nuget\\packages\\",
-      "outputPath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\obj\\",
+      "projectPath": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj",
+      "packagesPath": "C:\\Users\\xteam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kelly\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\xteam\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"

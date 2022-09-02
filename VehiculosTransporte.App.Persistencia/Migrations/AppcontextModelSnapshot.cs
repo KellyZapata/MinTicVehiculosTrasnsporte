@@ -7,8 +7,8 @@ using VehiculosTransporte.App.Persistencia;
 
 namespace VehiculosTransporte.App.Persistencia.Migrations
 {
-    [DbContext(typeof(Appcontext))]
-    partial class AppcontextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(AppContext))]
+    partial class AppContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
