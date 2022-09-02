@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "dJc5CtO6irTZvyoU1M49X2SPxDcdxKvdDgkPTvmKttU2abjPULmu/zu3Ls+TYcj6O3Yhj1Vl1UUwzHkJ1SbU0g==",
+  "success": true,
+  "projectFilePath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kelly\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\kelly\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

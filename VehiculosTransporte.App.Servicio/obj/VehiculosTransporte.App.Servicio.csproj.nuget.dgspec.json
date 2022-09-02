@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Servicio\\VehiculosTransporte.App.Servicio.csproj": {}
+  },
+  "projects": {
+    "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Servicio\\VehiculosTransporte.App.Servicio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Servicio\\VehiculosTransporte.App.Servicio.csproj",
+        "projectName": "VehiculosTransporte.App.Servicio",
+        "projectPath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Servicio\\VehiculosTransporte.App.Servicio.csproj",
+        "packagesPath": "C:\\Users\\kelly\\.nuget\\packages\\",
+        "outputPath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Servicio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kelly\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.422\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
