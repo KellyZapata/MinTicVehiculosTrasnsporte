@@ -17,4 +17,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VehiculosTransporte.App.Dominio\VehiculosTransporte.App.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>
