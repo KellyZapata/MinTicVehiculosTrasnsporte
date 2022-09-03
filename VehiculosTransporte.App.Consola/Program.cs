@@ -13,9 +13,9 @@ namespace VehiculosTransporte.App.Consola
             Console.WriteLine("Hello World Entity Framework!");
             AddPersona();
             GetAllPersonas();
-            ActualizarPersona(2);
-            BuscarPersona(2);
-            EliminarPersona(2);
+            ActualizarPersona(3);
+            BuscarPersona(3);
+            // EliminarPersona(2);
         }
 
         private static void AddPersona(){
