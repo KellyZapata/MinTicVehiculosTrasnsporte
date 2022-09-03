@@ -7,21 +7,25 @@ namespace VehiculosTransporte.App.Consola
     class Program
     {
         private static IRepositorioPersonas _repoPersona = new RepositorioPersonas(new Persistencia.AppContext());
+        private static IRepositorioMecanicos _repoMecanico = new RepositorioMecanicos(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World Entity Framework!");
             AddPersona();
             GetAllPersonas();
-            ActualizarPersona(2);
-            BuscarPersona(2);
-            EliminarPersona(2);
+            Console.WriteLine("-----------------");
+            AddMecanico();
+            GetAllPersonas();
+            Console.WriteLine("-----------------");
+            GetAllMecanicos();
+
         }
 
         private static void AddPersona(){
             var persona = new Persona{
-                Nombres = "Juan",
-                Apellidos = "Perez",
+                Nombres = "Persona",
+                Apellidos = "1",
                 Cedula = "123456789",
                 Numero_Telefono = "123456789",
                 Direccion = "Calle 123"
@@ -54,6 +58,45 @@ namespace VehiculosTransporte.App.Consola
             var personas = _repoPersona.GetPersonas();
             foreach (var persona in personas){
                 Console.WriteLine(persona.Nombres + " " + persona.Apellidos);
+            }
+        }
+
+        private static void AddMecanico(){
+            var mecanico = new Mecanico{
+                Nombres = "Mecanico",
+                Apellidos = "1",
+                Cedula = "123456789",
+                Numero_Telefono = "123456789",
+                Direccion = "Calle 123"
+            };
+            _repoMecanico.AddMecanico(mecanico);
+        }
+
+        private static void BuscarMecanico(int idMecanico){
+            var mecanico = _repoMecanico.GetMecanico(idMecanico);
+            Console.WriteLine(mecanico.Nombres + " " + mecanico.Apellidos);
+        }
+
+        private static void EliminarMecanico(int idMecanico){
+            _repoMecanico.DeleteMecanico(idMecanico);
+        }
+
+        private static void ActualizarMecanico(int idMecanico){
+            var mecanico = _repoMecanico.GetMecanico(idMecanico);
+            if (mecanico != null){
+                mecanico.Nombres = "Juan";
+                mecanico.Apellidos = "Perez 2";
+                mecanico.Cedula = "123456789";
+                mecanico.Numero_Telefono = "123456789";
+                mecanico.Direccion = "Calle 123";
+                _repoMecanico.UpdateMecanico(mecanico);
+            }
+        }
+
+        private static void GetAllMecanicos(){
+            var mecanicos = _repoMecanico.GetMecanicos();
+            foreach (var mecanico in mecanicos){
+                Console.WriteLine(mecanico.Nombres + " " + mecanico.Apellidos);
             }
         }
     }
