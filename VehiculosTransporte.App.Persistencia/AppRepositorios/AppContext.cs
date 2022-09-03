@@ -7,6 +7,7 @@ namespace VehiculosTransporte.App.Persistencia
     {
         public DbSet<Persona> Personas{get;set;}
         public DbSet<Mecanico> Mecanicos{get;set;}
+        public DbSet<Auxiliar> Auxiliares{get;set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             if(!optionsBuilder.IsConfigured){
