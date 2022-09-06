@@ -9,7 +9,9 @@ namespace VehiculosTransporte.App.Dominio
     [ForeignKey("Mecanico")]
     public virtual int MecanicoId {get;set;}
     public virtual Mecanico Mecanico {get;set;}
-    public int Vehiculo {get;set;}
+    [ForeignKey("Vehiculo")]
+    public virtual int VehiculoId {get;set;}
+    public virtual Vehiculo Vehiculo {get;set;}
     public string Nivel_Aceite {get;set;}
     public string Nivel_Liquido_frenos {get;set;}
     public string Nivel_Refrigerante {get;set;}
