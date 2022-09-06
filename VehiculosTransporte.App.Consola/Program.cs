@@ -9,6 +9,7 @@ namespace VehiculosTransporte.App.Consola
         private static IRepositorioPersonas _repoPersona = new RepositorioPersonas(new Persistencia.AppContext());
         private static IRepositorioMecanicos _repoMecanico = new RepositorioMecanicos(new Persistencia.AppContext());
 
+        private static IRepositorioVerificaciones _repoVerificacion = new RepositorioVerificaciones(new Persistencia.AppContext());
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World Entity Framework!");
@@ -19,6 +20,9 @@ namespace VehiculosTransporte.App.Consola
             GetAllPersonas();
             Console.WriteLine("-----------------");
             GetAllMecanicos();
+            AddVerificacion();
+            GetAllVerificaciones();
+            Console.WriteLine("-----------------");
 
         }
 
@@ -99,5 +103,47 @@ namespace VehiculosTransporte.App.Consola
                 Console.WriteLine(mecanico.Nombres + " " + mecanico.Apellidos);
             }
         }
+
+         private static void AddVerificacion(){
+            var verificacion = new Verificacion{
+                Vehiculo = 1,
+                MecanicoId = 9,
+                Nivel_Aceite = "6 Litros",
+                Nivel_Liquido_frenos = "2 Litros",
+                Nivel_Refrigerante = "10 Litros",
+                Nivel_Liquido_direccion = "5 Litros",
+            };
+            _repoVerificacion.AddVerificacion(verificacion);
+        }
+
+        private static void BuscarVerificacion(int idVerificacion){
+            var verificacion = _repoVerificacion.GetVerificacion(idVerificacion);
+            Console.WriteLine(verificacion.Vehiculo + " " + verificacion.Mecanico);
+        }
+
+        private static void EliminarVerificacion(int idVerificacion){
+            _repoVerificacion.DeleteVerificacion(idVerificacion);
+        }
+
+        private static void ActualizarVerificacion(int idVerificacion){
+            var verificacion = _repoVerificacion.GetVerificacion(idVerificacion);
+            if (verificacion != null){
+                verificacion.Vehiculo = 1;
+                verificacion.MecanicoId = 9;
+                verificacion.Nivel_Aceite = "8 Litros";
+                verificacion.Nivel_Liquido_frenos = "3 Litros";
+                verificacion.Nivel_Refrigerante = "12 Litros";
+                verificacion.Nivel_Liquido_direccion = "6 Litros";
+                _repoVerificacion.UpdateVerificacion(verificacion);
+            }
+        }
+
+        private static void GetAllVerificaciones(){
+            var verificaciones = _repoVerificacion.GetVerificaciones();
+            foreach (var verificacion in verificaciones){
+                 Console.WriteLine(verificacion.Vehiculo + " " + verificacion.MecanicoId);
+            }
+        }
+
     }
 }
