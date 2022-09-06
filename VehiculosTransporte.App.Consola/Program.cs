@@ -25,7 +25,7 @@ namespace VehiculosTransporte.App.Consola
             AddVerificacion();
             GetAllVerificaciones();
             AddRepuesto();
-            GetAllRepuesto();
+            GetAllRepuestos();
             Console.WriteLine("-----------------");
 
         }
@@ -151,36 +151,36 @@ namespace VehiculosTransporte.App.Consola
 
          private static void AddRepuesto(){
             var repuesto = new Repuesto{
-                Verificacion = "1234",
+                VerificacionId = 1,
                 Descripcion = "primer mantenimiento",
-                Precio = "500",
+                Precio = 500,
             };
-            _repoRepuesto.AddRepuesto(Repuesto);
+            _repoRepuesto.AddRepuesto(repuesto);
         }
 
         private static void BuscarRepuesto(int idRepuesto){
-            var Repuesto = _repoRepuesto.GetRepuesto(idRepuesto);
-            Console.WriteLine(repuesto.Verificacion + " " + repuesto.Descripcion);
+            var repuesto = _repoRepuesto.GetRepuesto(idRepuesto);
+            Console.WriteLine(repuesto.VerificacionId + " " + repuesto.Descripcion);
         }
 
         private static void EliminarRepuesto(int idRepuesto){
-            _repoPersona.DeleteRepuesto(idRepuesto);
+            _repoRepuesto.DeleteRepuesto(idRepuesto);
         }
 
         private static void ActualizarRepuesto(int idRepuesto){
             var repuesto = _repoRepuesto.GetRepuesto(idRepuesto);
-            if (verificacion != null){
-                repuesto.Verificacion = " 1235";
+            if (repuesto != null){
+                repuesto.VerificacionId = 1;
                 repuesto.Descripcion = "segundo mantenimiento";
-                repuesto.Precio = "600";
-                _repoRepuesto..UpdateRepuesto(repuesto);
+                repuesto.Precio = 600;
+                _repoRepuesto.UpdateRepuesto(repuesto);
             }
         }
 
         private static void GetAllRepuestos(){
             var repuestos = _repoRepuesto.GetRepuestos();
             foreach (var repuesto in repuestos){
-                 Console.WriteLine(repuesto.Verificacion + " " + repuesto.Descripcion);
+                 Console.WriteLine(repuesto.VerificacionId + " " + repuesto.Descripcion);
             }
         }
     }
