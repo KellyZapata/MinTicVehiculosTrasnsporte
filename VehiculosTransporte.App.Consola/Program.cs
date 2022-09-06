@@ -10,6 +10,8 @@ namespace VehiculosTransporte.App.Consola
         private static IRepositorioMecanicos _repoMecanico = new RepositorioMecanicos(new Persistencia.AppContext());
 
         private static IRepositorioVerificaciones _repoVerificacion = new RepositorioVerificaciones(new Persistencia.AppContext());
+        private static IRepositorioRepuestos _repoRepuesto = new RepositorioRepuestos(new Persistencia.AppContext());
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World Entity Framework!");
@@ -22,6 +24,8 @@ namespace VehiculosTransporte.App.Consola
             GetAllMecanicos();
             AddVerificacion();
             GetAllVerificaciones();
+            AddRepuesto();
+            GetAllRepuesto();
             Console.WriteLine("-----------------");
 
         }
@@ -145,5 +149,39 @@ namespace VehiculosTransporte.App.Consola
             }
         }
 
+         private static void AddRepuesto(){
+            var repuesto = new Repuesto{
+                Verificacion = "1234",
+                Descripcion = "primer mantenimiento",
+                Precio = "500",
+            };
+            _repoRepuesto.AddRepuesto(Repuesto);
+        }
+
+        private static void BuscarRepuesto(int idRepuesto){
+            var Repuesto = _repoRepuesto.GetRepuesto(idRepuesto);
+            Console.WriteLine(repuesto.Verificacion + " " + repuesto.Descripcion);
+        }
+
+        private static void EliminarRepuesto(int idRepuesto){
+            _repoPersona.DeleteRepuesto(idRepuesto);
+        }
+
+        private static void ActualizarRepuesto(int idRepuesto){
+            var repuesto = _repoRepuesto.GetRepuesto(idRepuesto);
+            if (verificacion != null){
+                repuesto.Verificacion = " 1235";
+                repuesto.Descripcion = "segundo mantenimiento";
+                repuesto.Precio = "600";
+                _repoRepuesto..UpdateRepuesto(repuesto);
+            }
+        }
+
+        private static void GetAllRepuestos(){
+            var repuestos = _repoRepuesto.GetRepuestos();
+            foreach (var repuesto in repuestos){
+                 Console.WriteLine(repuesto.Verificacion + " " + repuesto.Descripcion);
+            }
+        }
     }
 }
