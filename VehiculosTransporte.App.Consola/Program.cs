@@ -110,7 +110,7 @@ namespace VehiculosTransporte.App.Consola
 
          private static void AddVerificacion(){
             var verificacion = new Verificacion{
-                Vehiculo = 1,
+                VehiculoId = 1,
                 MecanicoId = 9,
                 Nivel_Aceite = "6 Litros",
                 Nivel_Liquido_frenos = "2 Litros",
@@ -132,7 +132,7 @@ namespace VehiculosTransporte.App.Consola
         private static void ActualizarVerificacion(int idVerificacion){
             var verificacion = _repoVerificacion.GetVerificacion(idVerificacion);
             if (verificacion != null){
-                verificacion.Vehiculo = 1;
+                verificacion.VehiculoId = 1;
                 verificacion.MecanicoId = 9;
                 verificacion.Nivel_Aceite = "8 Litros";
                 verificacion.Nivel_Liquido_frenos = "3 Litros";

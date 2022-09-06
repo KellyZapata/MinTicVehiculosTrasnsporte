@@ -10,6 +10,7 @@ namespace VehiculosTransporte.App.Persistencia
         public DbSet<Auxiliar> Auxiliares{get;set;}
         public DbSet<Verificacion> Verificaciones{get;set;}
         public DbSet<Repuesto> Repuestos{get;set;}
+        public DbSet<Vehiculo> Vehiculos{get;set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             if(!optionsBuilder.IsConfigured){
