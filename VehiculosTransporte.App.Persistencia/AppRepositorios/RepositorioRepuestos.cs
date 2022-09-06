@@ -14,14 +14,14 @@ namespace VehiculosTransporte.App.Persistencia
             _appContext = appContext;
         }
 
-        Persona IRepositorioRepuestos.AddRepuesto(Repuesto repuesto)
+        Repuesto IRepositorioRepuestos.AddRepuesto(Repuesto repuesto)
         {
             var repuestoAdicionada = _appContext.Repuestos.Add(repuesto);
             _appContext.SaveChanges();
             return repuestoAdicionada.Entity;
         }
 
-        void IRepositorioRepuesto.DeleteRepuesto(int idRepuesto)
+        void IRepositorioRepuestos.DeleteRepuesto(int idRepuesto)
         {
             var repuestoEncontrada = _appContext.Repuestos.FirstOrDefault(p => p.Id == idRepuesto);
             if (repuestoEncontrada == null)
@@ -35,20 +35,19 @@ namespace VehiculosTransporte.App.Persistencia
             return _appContext.Repuestos;
         }
 
-        Persona IRepositorioRepuestos.GetRepuesto(int idRepuesto)
+        Repuesto IRepositorioRepuestos.GetRepuesto(int idRepuesto)
         {
             return _appContext.Repuestos.FirstOrDefault(p => p.Id == idRepuesto);
         }
 
-        Persona IRepositorioRepuestos.UpdateRepuesto(Repuesto repuesto)
+        Repuesto IRepositorioRepuestos.UpdateRepuesto(Repuesto repuesto)
         {
             var repuestoEncontrada = _appContext.Repuestos.FirstOrDefault(p => p.Id == repuesto.Id);
             if (repuestoEncontrada != null)
             {
                 repuestoEncontrada.Verificacion = repuesto.Verificacion;
-                repuestoEncontrada.Despcripcion = repuesto.Despcripcion;
+                repuestoEncontrada.Descripcion = repuesto.Descripcion;
                 repuestoEncontrada.Precio = repuesto.Precio;
-                
                 _appContext.SaveChanges();
             }
             return repuestoEncontrada;

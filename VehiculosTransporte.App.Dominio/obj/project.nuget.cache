@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "H6bcO/8qzdJenubVr3FhcFnsxByseB7MJBk+Ivf77MAiHHP10OmulPkUNTaINUgBeM4hO3G5iVtTA8q8CN5cyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CLARA FAJARDO\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.APP.Dominio\\VehiculosTransporte.App.Dominio.csproj",
+  "projectFilePath": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xteam\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\xteam\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

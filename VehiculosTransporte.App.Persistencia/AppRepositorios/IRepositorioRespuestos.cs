@@ -15,7 +15,7 @@ namespace VehiculosTransporte.App.Persistencia
 
         void DeleteRepuesto(int idRepuesto);
 
-       Repuesto GetVerificacion(int idRepuesto;
+        Repuesto GetRepuesto(int idRepuesto);
     }
 }
 
