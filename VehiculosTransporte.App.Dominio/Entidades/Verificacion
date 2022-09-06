@@ -1,0 +1,17 @@
+using System;
+
+
+namespace VehiculosTransporte.App.Dominio
+{
+    public class Verificacion
+    {
+    //public int Id {get;set;}
+    public int Vehiculo {get;set;}
+    public int Mecanico {get;set;}
+    public string Nivel_Aceite {get;set;}
+    public string Nivel_Liquido_frenos {get;set;}
+    public string Nivel_Refrigerante {get;set;}
+    public string Nivel_Liquido_direccion {get;set;}
+    }
+}
+
