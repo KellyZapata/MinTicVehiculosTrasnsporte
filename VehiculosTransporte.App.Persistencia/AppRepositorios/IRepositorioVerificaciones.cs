@@ -9,12 +9,12 @@ namespace VehiculosTransporte.App.Persistencia
     {
         IEnumerable<Verificacion> GetVerificaciones();
 
-        Persona AddVerificacion(Verificacion verificacion);
+        Verificacion AddVerificacion(Verificacion verificacion);
 
-        Persona UpdateVerificacion(Verificacion verificacion);
+        Verificacion UpdateVerificacion(Verificacion verificacion);
 
         void DeleteVerificacion(int idVerificacion);
 
-        Persona GetVerificacion(int idVerificacion);
+        Verificacion GetVerificacion(int idVerificacion);
     }
 }

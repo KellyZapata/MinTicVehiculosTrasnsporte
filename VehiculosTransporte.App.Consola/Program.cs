@@ -23,7 +23,6 @@ namespace VehiculosTransporte.App.Consola
             AddVerificacion();
             GetAllVerificaciones();
             Console.WriteLine("-----------------");
-            
 
         }
 
@@ -106,9 +105,9 @@ namespace VehiculosTransporte.App.Consola
         }
 
          private static void AddVerificacion(){
-            var verificacion = new verificacion{
-                Vehiculo = "Vehiculo",
-                Mecanico = "1",
+            var verificacion = new Verificacion{
+                Vehiculo = 1,
+                MecanicoId = 9,
                 Nivel_Aceite = "6 Litros",
                 Nivel_Liquido_frenos = "2 Litros",
                 Nivel_Refrigerante = "10 Litros",
@@ -123,26 +122,26 @@ namespace VehiculosTransporte.App.Consola
         }
 
         private static void EliminarVerificacion(int idVerificacion){
-            _repoPersona.DeleteVerificacion(idVerificacion);
+            _repoVerificacion.DeleteVerificacion(idVerificacion);
         }
 
         private static void ActualizarVerificacion(int idVerificacion){
             var verificacion = _repoVerificacion.GetVerificacion(idVerificacion);
             if (verificacion != null){
-                verificacion.Vehiculo = " Nissan";
-                verificacion.Mecanico = "2";
+                verificacion.Vehiculo = 1;
+                verificacion.MecanicoId = 9;
                 verificacion.Nivel_Aceite = "8 Litros";
                 verificacion.Nivel_Liquido_frenos = "3 Litros";
                 verificacion.Nivel_Refrigerante = "12 Litros";
                 verificacion.Nivel_Liquido_direccion = "6 Litros";
-                _repoVerificacion..UpdateVerificacion(verificacion);
+                _repoVerificacion.UpdateVerificacion(verificacion);
             }
         }
 
         private static void GetAllVerificaciones(){
-            var verificaciones = _repoPersona.GetVerificaciones();
+            var verificaciones = _repoVerificacion.GetVerificaciones();
             foreach (var verificacion in verificaciones){
-                 Console.WriteLine(verificacion.Vehiculo + " " + verificacion.Mecanico);
+                 Console.WriteLine(verificacion.Vehiculo + " " + verificacion.MecanicoId);
             }
         }
 
