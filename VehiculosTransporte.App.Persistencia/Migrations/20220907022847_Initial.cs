@@ -19,7 +19,8 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                     Expiracion_tenicomecanica = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Expiracion_soat = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Expiracion_seguro_contractual = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Expiracion_extra_contractual = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Expiracion_extra_contractual = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

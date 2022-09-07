@@ -7266,19 +7266,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xteam\\.nuget\\packages\\": {}
+    "C:\\Users\\kelly\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Persistencia\\VehiculosTransporte.App.Persistencia.csproj",
+      "projectUniqueName": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Persistencia\\VehiculosTransporte.App.Persistencia.csproj",
       "projectName": "VehiculosTransporte.App.Persistencia",
-      "projectPath": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Persistencia\\VehiculosTransporte.App.Persistencia.csproj",
-      "packagesPath": "C:\\Users\\xteam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Persistencia\\obj\\",
+      "projectPath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Persistencia\\VehiculosTransporte.App.Persistencia.csproj",
+      "packagesPath": "C:\\Users\\kelly\\.nuget\\packages\\",
+      "outputPath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\xteam\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\kelly\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -7289,8 +7289,8 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj": {
-              "projectPath": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj"
+            "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj": {
+              "projectPath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj"
             }
           }
         }

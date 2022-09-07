@@ -10,7 +10,7 @@ using VehiculosTransporte.App.Persistencia;
 namespace VehiculosTransporte.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20220907020853_Initial")]
+    [Migration("20220907022847_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,6 +84,10 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("Expiracion_extra_contractual")
                         .HasColumnType("datetime2");
 
@@ -108,6 +112,8 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Vehiculos");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Vehiculo");
                 });
 
             modelBuilder.Entity("VehiculosTransporte.App.Dominio.Verificacion", b =>
@@ -175,6 +181,13 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                     b.HasIndex("VehiculoId");
 
                     b.HasDiscriminator().HasValue("Propietario");
+                });
+
+            modelBuilder.Entity("VehiculosTransporte.App.Dominio.Bus", b =>
+                {
+                    b.HasBaseType("VehiculosTransporte.App.Dominio.Vehiculo");
+
+                    b.HasDiscriminator().HasValue("Bus");
                 });
 
             modelBuilder.Entity("VehiculosTransporte.App.Dominio.Repuesto", b =>
