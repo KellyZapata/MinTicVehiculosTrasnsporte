@@ -11,6 +11,7 @@ namespace VehiculosTransporte.App.Consola
 
         private static IRepositorioVerificaciones _repoVerificacion = new RepositorioVerificaciones(new Persistencia.AppContext());
         private static IRepositorioRepuestos _repoRepuesto = new RepositorioRepuestos(new Persistencia.AppContext());
+        private static IRepositorioVehiculos _repoVehiculo = new RepositorioVehiculos(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
@@ -22,6 +23,7 @@ namespace VehiculosTransporte.App.Consola
             GetAllPersonas();
             Console.WriteLine("-----------------");
             GetAllMecanicos();
+            AddVehiculo();
             AddVerificacion();
             GetAllVerificaciones();
             AddRepuesto();
@@ -39,6 +41,19 @@ namespace VehiculosTransporte.App.Consola
                 Direccion = "Calle 123"
             };
             _repoPersona.AddPersona(persona);
+        }
+
+        private static void AddVehiculo(){
+            var vehiculo = new Vehiculo{
+                Placa = "123456",
+                Marca = "Marca",
+                Modelo = "Modelo",
+                Expiracion_tenicomecanica = DateTime.Now,
+                Expiracion_soat = DateTime.Now,
+                Expiracion_seguro_contractual = DateTime.Now,
+                Expiracion_extra_contractual = DateTime.Now
+            };
+            _repoVehiculo.AddVehiculo(vehiculo);
         }
 
         private static void BuscarPersona(int idPersona){
@@ -111,7 +126,7 @@ namespace VehiculosTransporte.App.Consola
          private static void AddVerificacion(){
             var verificacion = new Verificacion{
                 VehiculoId = 1,
-                MecanicoId = 9,
+                MecanicoId = 1,
                 Nivel_Aceite = "6 Litros",
                 Nivel_Liquido_frenos = "2 Litros",
                 Nivel_Refrigerante = "10 Litros",
@@ -151,7 +166,7 @@ namespace VehiculosTransporte.App.Consola
 
          private static void AddRepuesto(){
             var repuesto = new Repuesto{
-                VerificacionId = 1,
+                VerificacionId = 2,
                 Descripcion = "primer mantenimiento",
                 Precio = 500,
             };
