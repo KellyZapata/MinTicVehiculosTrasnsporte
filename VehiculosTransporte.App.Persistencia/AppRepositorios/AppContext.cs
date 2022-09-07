@@ -14,6 +14,7 @@ namespace VehiculosTransporte.App.Persistencia
         public DbSet<Propietario> Propietarios{get;set;}
         public DbSet<JefeOperaciones> JefesOperaciones{get;set;}
         public DbSet<Bus> Buses{get;set;}
+        public DbSet<Microbus> Microbuses{get;set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             if(!optionsBuilder.IsConfigured){
