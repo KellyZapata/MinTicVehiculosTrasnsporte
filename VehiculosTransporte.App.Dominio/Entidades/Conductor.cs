@@ -4,8 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace VehiculosTransporte.App.Dominio
 {
 
-public class Propietario: Persona{
+public class Conductor: Persona{
 }
     [ForeignKey("Vehiculo")]
     public virtual int VehiculoId {get;set;}
+    public virtual Vehiculo Vehiculo {get;set;}
 }
