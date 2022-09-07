@@ -11,6 +11,11 @@ namespace VehiculosTransporte.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
+        public RepositorioJefeOperaciones(AppContext appContext)
+        {
+            _appContext = appContext;
+        }
+
         public IEnumerable<JefeOperaciones> GetAllJefesOperaciones(){
             return _appContext.JefesOperaciones;
         }

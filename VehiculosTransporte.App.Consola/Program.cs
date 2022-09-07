@@ -13,6 +13,7 @@ namespace VehiculosTransporte.App.Consola
         private static IRepositorioRepuestos _repoRepuesto = new RepositorioRepuestos(new Persistencia.AppContext());
         private static IRepositorioVehiculos _repoVehiculo = new RepositorioVehiculos(new Persistencia.AppContext());
         private static IRepositorioBus _repoBus = new RepositorioBus(new Persistencia.AppContext());
+        private static IRepositorioMicrobuses _repoMicrobus = new RepositorioMicrobuses(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
@@ -26,6 +27,7 @@ namespace VehiculosTransporte.App.Consola
             GetAllMecanicos();
             AddVehiculo();
             AddBus();
+            AddMicrobus();
             AddVerificacion();
             GetAllVerificaciones();
             AddRepuesto();
@@ -43,6 +45,19 @@ namespace VehiculosTransporte.App.Consola
                 Direccion = "Calle 123"
             };
             _repoPersona.AddPersona(persona);
+        }
+
+        private static void AddMicrobus(){
+            var microbus = new Microbus{
+                Placa = "123456",
+                Marca = "Marca",
+                Modelo = "Modelo",
+                Expiracion_tenicomecanica =DateTime.Now,
+                Expiracion_soat =DateTime.Now,
+                Expiracion_seguro_contractual =DateTime.Now,
+                Expiracion_extra_contractual =DateTime.Now
+            };
+            _repoMicrobus.AddMicrobus(microbus);
         }
 
         private static void AddVehiculo(){

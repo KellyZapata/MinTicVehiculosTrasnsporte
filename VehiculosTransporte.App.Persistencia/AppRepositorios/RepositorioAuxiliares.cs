@@ -11,6 +11,11 @@ namespace VehiculosTransporte.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
+        public RepositorioAuxiliares(AppContext appContext)
+        {
+            _appContext = appContext;
+        }
+
         public IEnumerable<Auxiliar> GetAllAuxiliares(){
             return _appContext.Auxiliares;
         }
