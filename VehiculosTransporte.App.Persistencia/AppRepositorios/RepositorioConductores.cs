@@ -26,9 +26,9 @@ namespace VehiculosTransporte.App.Persistencia
             var conductorEncontrado = _appContext.Conductores.FirstOrDefault(p => p.Id == conductor.Id);
             if (conductorEncontrado != null)
             {
-                conductorEncontrado.Nombre = conductor.Nombre;
+                conductorEncontrado.Nombres = conductor.Nombres;
                 conductorEncontrado.Apellidos = conductor.Apellidos;
-                conductorEncontrado.NumeroTelefono = conductor.NumeroTelefono;
+                conductorEncontrado.Numero_Telefono = conductor.Numero_Telefono;
                 conductorEncontrado.Cedula = conductor.Cedula;
                 conductorEncontrado.VehiculoId = conductor.VehiculoId;
                 _appContext.SaveChanges();
