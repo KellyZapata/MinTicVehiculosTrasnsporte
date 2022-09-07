@@ -10,8 +10,8 @@ using VehiculosTransporte.App.Persistencia;
 namespace VehiculosTransporte.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20220906231159_Inicial")]
-    partial class Inicial
+    [Migration("20220907020853_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -151,11 +151,30 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                     b.HasDiscriminator().HasValue("Auxiliar");
                 });
 
+            modelBuilder.Entity("VehiculosTransporte.App.Dominio.JefeOperaciones", b =>
+                {
+                    b.HasBaseType("VehiculosTransporte.App.Dominio.Persona");
+
+                    b.HasDiscriminator().HasValue("JefeOperaciones");
+                });
+
             modelBuilder.Entity("VehiculosTransporte.App.Dominio.Mecanico", b =>
                 {
                     b.HasBaseType("VehiculosTransporte.App.Dominio.Persona");
 
                     b.HasDiscriminator().HasValue("Mecanico");
+                });
+
+            modelBuilder.Entity("VehiculosTransporte.App.Dominio.Propietario", b =>
+                {
+                    b.HasBaseType("VehiculosTransporte.App.Dominio.Persona");
+
+                    b.Property<int>("VehiculoId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("VehiculoId");
+
+                    b.HasDiscriminator().HasValue("Propietario");
                 });
 
             modelBuilder.Entity("VehiculosTransporte.App.Dominio.Repuesto", b =>
@@ -184,6 +203,17 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                         .IsRequired();
 
                     b.Navigation("Mecanico");
+
+                    b.Navigation("Vehiculo");
+                });
+
+            modelBuilder.Entity("VehiculosTransporte.App.Dominio.Propietario", b =>
+                {
+                    b.HasOne("VehiculosTransporte.App.Dominio.Vehiculo", "Vehiculo")
+                        .WithMany()
+                        .HasForeignKey("VehiculoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Vehiculo");
                 });
