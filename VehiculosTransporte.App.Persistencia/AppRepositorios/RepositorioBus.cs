@@ -11,6 +11,11 @@ namespace VehiculosTransporte.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
+        public RepositorioBus(AppContext appContext)
+        {
+            _appContext = appContext;
+        }
+
         public IEnumerable<Bus> GetAllBuses(){
             return _appContext.Buses;
         }

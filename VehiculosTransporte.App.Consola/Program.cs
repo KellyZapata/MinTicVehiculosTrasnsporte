@@ -12,6 +12,7 @@ namespace VehiculosTransporte.App.Consola
         private static IRepositorioVerificaciones _repoVerificacion = new RepositorioVerificaciones(new Persistencia.AppContext());
         private static IRepositorioRepuestos _repoRepuesto = new RepositorioRepuestos(new Persistencia.AppContext());
         private static IRepositorioVehiculos _repoVehiculo = new RepositorioVehiculos(new Persistencia.AppContext());
+        private static IRepositorioBus _repoBus = new RepositorioBus(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
@@ -24,6 +25,7 @@ namespace VehiculosTransporte.App.Consola
             Console.WriteLine("-----------------");
             GetAllMecanicos();
             AddVehiculo();
+            AddBus();
             AddVerificacion();
             GetAllVerificaciones();
             AddRepuesto();
@@ -54,6 +56,18 @@ namespace VehiculosTransporte.App.Consola
                 Expiracion_extra_contractual = DateTime.Now
             };
             _repoVehiculo.AddVehiculo(vehiculo);
+        }
+        private static void AddBus(){
+            var bus = new Bus{
+                Placa = "123456",
+                Marca = "Marca",
+                Modelo = "Modelo",
+                Expiracion_tenicomecanica = DateTime.Now,
+                Expiracion_soat = DateTime.Now,
+                Expiracion_seguro_contractual = DateTime.Now,
+                Expiracion_extra_contractual = DateTime.Now
+            };
+            _repoBus.AddBus(bus);
         }
 
         private static void BuscarPersona(int idPersona){
@@ -126,7 +140,7 @@ namespace VehiculosTransporte.App.Consola
          private static void AddVerificacion(){
             var verificacion = new Verificacion{
                 VehiculoId = 1,
-                MecanicoId = 1,
+                MecanicoId = 2,
                 Nivel_Aceite = "6 Litros",
                 Nivel_Liquido_frenos = "2 Litros",
                 Nivel_Refrigerante = "10 Litros",
@@ -166,7 +180,7 @@ namespace VehiculosTransporte.App.Consola
 
          private static void AddRepuesto(){
             var repuesto = new Repuesto{
-                VerificacionId = 2,
+                VerificacionId = 1,
                 Descripcion = "primer mantenimiento",
                 Precio = 500,
             };
