@@ -10,8 +10,8 @@ using VehiculosTransporte.App.Persistencia;
 namespace VehiculosTransporte.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20220907005955_COnductor")]
-    partial class COnductor
+    [Migration("20220907012021_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,7 +47,12 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                     b.Property<string>("Numero_Telefono")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("VehiculoId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("VehiculoId");
 
                     b.ToTable("Personas");
 
@@ -155,11 +160,6 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                 {
                     b.HasBaseType("VehiculosTransporte.App.Dominio.Persona");
 
-                    b.Property<int>("VehiculoId")
-                        .HasColumnType("int");
-
-                    b.HasIndex("VehiculoId");
-
                     b.HasDiscriminator().HasValue("Conductor");
                 });
 
@@ -181,13 +181,18 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                 {
                     b.HasBaseType("VehiculosTransporte.App.Dominio.Persona");
 
-                    b.Property<int>("VehiculoId")
-                        .HasColumnType("int")
-                        .HasColumnName("Propietario_VehiculoId");
-
-                    b.HasIndex("VehiculoId");
-
                     b.HasDiscriminator().HasValue("Propietario");
+                });
+
+            modelBuilder.Entity("VehiculosTransporte.App.Dominio.Persona", b =>
+                {
+                    b.HasOne("VehiculosTransporte.App.Dominio.Vehiculo", "Vehiculo")
+                        .WithMany()
+                        .HasForeignKey("VehiculoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Vehiculo");
                 });
 
             modelBuilder.Entity("VehiculosTransporte.App.Dominio.Repuesto", b =>
@@ -216,28 +221,6 @@ namespace VehiculosTransporte.App.Persistencia.Migrations
                         .IsRequired();
 
                     b.Navigation("Mecanico");
-
-                    b.Navigation("Vehiculo");
-                });
-
-            modelBuilder.Entity("VehiculosTransporte.App.Dominio.Conductor", b =>
-                {
-                    b.HasOne("VehiculosTransporte.App.Dominio.Vehiculo", "Vehiculo")
-                        .WithMany()
-                        .HasForeignKey("VehiculoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Vehiculo");
-                });
-
-            modelBuilder.Entity("VehiculosTransporte.App.Dominio.Propietario", b =>
-                {
-                    b.HasOne("VehiculosTransporte.App.Dominio.Vehiculo", "Vehiculo")
-                        .WithMany()
-                        .HasForeignKey("VehiculoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("Vehiculo");
                 });
