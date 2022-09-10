@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VehiculosTransporte.App.Dominio\VehiculosTransporte.App.Dominio.csproj" />
+    <ProjectReference Include="..\VehiculosTransporte.App.Persistencia\VehiculosTransporte.App.Persistencia.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

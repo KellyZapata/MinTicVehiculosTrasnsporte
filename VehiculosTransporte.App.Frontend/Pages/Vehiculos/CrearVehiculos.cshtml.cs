@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using VehiculosTransporte.App.Persistencia.AppRepositorios;
+using VehiculosTransporte.App.Persistencia;
+using VehiculosTransporte.App.Dominio;
 
 namespace VehiculosTransporte.App.Frontend.Pages
 {
@@ -13,13 +14,13 @@ namespace VehiculosTransporte.App.Frontend.Pages
         private readonly IRepositorioVehiculos repositorioVehiculos;
         public IEnumerable<Vehiculo> vehiculos {get; set;}
 
-        public ListModel(IRepositorioVehiculos repositorioVehiculos){
-            this.repositorioVehiculos = repositorioVehiculos;
+        public CrearVehiculosModel(){
+            this.repositorioVehiculos = new RepositorioVehiculos(new VehiculosTransporte.App.Persistencia.AppContext());
         }
 
         public void OnGet()
         {
-            vehiculos.repositorioVehiculos.GetVehiculos();
+            vehiculos = repositorioVehiculos.GetVehiculos();
 
         }
     }

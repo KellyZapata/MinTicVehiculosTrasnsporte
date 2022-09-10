@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "S0rOyHI8FSbg7dpyY4657p+JBvSCvypBrDvHM39XL/lr8z7VGUXaxE6hjvjtBsWVm1fcuKK+SoKPSbwVPjYgsw==",
+  "dgSpecHash": "H6bcO/8qzdJenubVr3FhcFnsxByseB7MJBk+Ivf77MAiHHP10OmulPkUNTaINUgBeM4hO3G5iVtTA8q8CN5cyQ==",
   "success": true,
-  "projectFilePath": "D:\\VehiculosTransporte\\VehiculosTransporte.App\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj",
+  "projectFilePath": "C:\\Users\\xteam\\Documents\\ciclo3\\MinTicVehiculosTrasnsporte\\VehiculosTransporte.App.Dominio\\VehiculosTransporte.App.Dominio.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kelly\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\kelly\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\kelly\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    "C:\\Users\\xteam\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\xteam\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\xteam\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

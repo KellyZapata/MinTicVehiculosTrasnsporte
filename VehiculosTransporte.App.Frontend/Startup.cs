@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
-using VehiculosTransporte.App.Persistencia.AppRepositorios;
+
+using VehiculosTransporte.App.Persistencia;
 
 namespace VehiculosTransporte.App.Frontend
 {
@@ -25,7 +27,7 @@ namespace VehiculosTransporte.App.Frontend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            FormartterServices.AddSingleton<IRepositorioVehiculos,RepositorioVehiculos>();
+            services.AddDbContext<VehiculosTransporte.App.Persistencia.AppContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
