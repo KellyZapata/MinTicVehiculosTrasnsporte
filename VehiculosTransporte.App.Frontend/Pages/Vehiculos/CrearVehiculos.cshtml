@@ -1,0 +1,17 @@
+﻿@page
+@model VehiculosTransporte.App.Frontend.Pages.CrearVehiculosModel
+@{
+}
+
+<h5>Crear Vehiculo</h5>
+<table class="table table-striped">
+
+    @foreach (var vehiculo in Model.vehiculos)
+    {
+        <tr>
+            <td>@vehiculo.Placa </td>
+            <td>@vehiculo.Marca </td>
+            <td>@vehiculo.Modelo </td>
+        </tr>
+    }
+</table>
