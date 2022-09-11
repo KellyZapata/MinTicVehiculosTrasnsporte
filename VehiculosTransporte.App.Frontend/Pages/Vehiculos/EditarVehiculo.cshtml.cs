@@ -20,9 +20,17 @@ namespace VehiculosTransporte.App.Frontend.Pages
             this.repositorioVehiculos = new RepositorioVehiculos(new VehiculosTransporte.App.Persistencia.AppContext());
 
         }
-       public IActionResult OnGet(int VehiculoId)
+       public IActionResult OnGet(int? VehiculoId)
         {
-            vehiculo = this.repositorioVehiculos.GetVehiculo(VehiculoId);
+            if(VehiculoId.HasValue)
+            {
+                vehiculo = this.repositorioVehiculos.GetVehiculo(VehiculoId.Value);
+            }
+            else
+            {
+                vehiculo = new Vehiculo();
+            }
+
             if(vehiculo == null)
             {
                 return RedirectToPage("./NotFound");
@@ -34,8 +42,15 @@ namespace VehiculosTransporte.App.Frontend.Pages
         }
         public IActionResult OnPost()
         {
-            this.repositorioVehiculos.UpdateVehiculo(vehiculo);
-            return Page();
+            if(vehiculo.Id > 0)
+            {
+                vehiculo = this.repositorioVehiculos.UpdateVehiculo(vehiculo);
+            }
+            else
+            {
+                this.repositorioVehiculos.AddVehiculo(vehiculo);
+            }
+            return RedirectToPage("./ListarVehiculo");
         }
     }
 }
