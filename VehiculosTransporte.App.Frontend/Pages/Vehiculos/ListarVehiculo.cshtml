@@ -26,6 +26,9 @@
             <td>@vehiculo.Expiracion_soat</td>
             <td><a class="btn btn-primary table-btn" asp-page="./DetallesVehiculo" asp-route-vehiculoId="@vehiculo.Id">Detalles</a>
             <a class="btn btn-primary table-btn" asp-page="./EditarVehiculo" asp-route-vehiculoId="@vehiculo.Id">Editar</a>
+            <a asp-page="./EditarVehiculo"
+            onclick="return confirm('Seguro que deseas eliminar este vehiculo?');"
+            asp-page-handler="Delete" asp-route-VehiculoId="@vehiculo.Id">Delete</a>
             </td>
             </tr>
         }

@@ -52,5 +52,11 @@ namespace VehiculosTransporte.App.Frontend.Pages
             }
             return RedirectToPage("./ListarVehiculo");
         }
+
+        public IActionResult OnGetDelete(string VehiculoId)
+        {
+            this.repositorioVehiculos.DeleteVehiculo(int.Parse(VehiculoId));
+            return RedirectToPage("./ListarVehiculo");
+        }
     }
 }
