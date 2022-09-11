@@ -1,0 +1,41 @@
+﻿@page
+@model VehiculosTransporte.App.Frontend.Pages.EditarVehiculoModel
+@{
+}
+<h2> Editar Vehiculo </h2>
+<form method="post">
+    <input type="hidden" asp-for="vehiculo.Id"/>
+    <div class="form-group">
+        <label asp-for="vehiculo.Placa"></label>
+        <input asp-for="vehiculo.Placa" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="vehiculo.Marca"></label>
+        <input asp-for="vehiculo.Marca" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="vehiculo.Modelo"></label>
+        <input asp-for="vehiculo.Modelo" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="vehiculo.Expiracion_tenicomecanica"></label>
+        <input asp-for="vehiculo.Expiracion_tenicomecanica" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="vehiculo.Expiracion_soat"></label>
+        <input asp-for="vehiculo.Expiracion_soat" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="vehiculo.Expiracion_seguro_contractual"></label>
+        <input asp-for="vehiculo.Expiracion_seguro_contractual" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="vehiculo.Expiracion_extra_contractual"></label>
+        <input asp-for="vehiculo.Expiracion_extra_contractual" type="text" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+
+
+</form>

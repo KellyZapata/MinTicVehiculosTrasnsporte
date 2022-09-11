@@ -24,7 +24,9 @@
             <td>@vehiculo.Modelo</td>
             <td>@vehiculo.Expiracion_tenicomecanica</td>
             <td>@vehiculo.Expiracion_soat</td>
-            <td><a class="btn btn-primary table-btn" asp-page="./DetallesVehiculo" asp-route-vehiculoId="@vehiculo.Id">Detalles</a></td>
+            <td><a class="btn btn-primary table-btn" asp-page="./DetallesVehiculo" asp-route-vehiculoId="@vehiculo.Id">Detalles</a>
+            <a class="btn btn-primary table-btn" asp-page="./EditarVehiculo" asp-route-vehiculoId="@vehiculo.Id">Editar</a>
+            </td>
             </tr>
         }
     </tbody>
