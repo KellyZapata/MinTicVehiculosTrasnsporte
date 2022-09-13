@@ -1,0 +1,39 @@
+@page
+@model VehiculosTransporte.App.Frontend.Pages.ListarVehiculo
+@{
+}
+
+    <table class="table table-bordered" id="tablaPersonas">
+    <thead>
+        <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Numero_Telefono</th>
+        <th scope="col">Direccion</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var persona in Model.personas){
+            <tr>
+            <td>@persona.Id</td>
+            <td>@persona.Nombres</td>
+            <td>@persona.Apellidos</td>
+            <td>@persona.Cedula</td>
+            <td>@persona.Numero_Telefono</td>
+            <td>@persona.Direccion</td>
+            <td><a class="btn btn-primary table-btn" asp-page="./DetallesPersona" asp-route-vehiculoId="@vehiculo.Id">Detalles</a>
+            <a class="btn btn-primary table-btn" asp-page="./EditarPersona" asp-route-vehiculoId="@vehiculo.Id">Editar</a>
+            <a asp-page="./EditarPersona"
+            onclick="return confirm('Seguro que deseas eliminar este Persona?');"
+            asp-page-handler="Delete" asp-route-PersonaId="@persona.Id">Delete</a>
+            </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+    <a asp-page="./EditarPersona" class="btn btn-primary table-btn">Adicionar persona</a>
+
+    
