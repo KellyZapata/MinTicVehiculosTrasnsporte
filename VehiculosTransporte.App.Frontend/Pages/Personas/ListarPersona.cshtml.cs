@@ -14,10 +14,10 @@ namespace VehiculosTransporte.App.Frontend.Pages
     public class ListarPersona : PageModel
     {
         private readonly IRepositorioPersonas repositorioPersonas;
-        public IEnumerable<Persona> persona {get; set;}
+        public IEnumerable<Persona> personas {get; set;}
 
         public ListarPersona(){
-            this.repositorioPersonas = new RepositorioPersonas(new PersonasTransporte.App.Persistencia.AppContext());
+            this.repositorioPersonas = new RepositorioPersonas(new VehiculosTransporte.App.Persistencia.AppContext());
         }
 
         public void OnGet()
@@ -31,7 +31,7 @@ namespace VehiculosTransporte.App.Frontend.Pages
             return new PartialViewResult
             {
                 ViewName = "EditarPersona",
-                ViewData = new ViewDataDictionary<Bus>(ViewData, repositorioPersonas.GetVehiculo(Int32.Parse(VehiculoId)))
+                ViewData = new ViewDataDictionary<Bus>(ViewData, repositorioPersonas.GetPersona(Int32.Parse(PersonaId)))
             };
         }
     }
