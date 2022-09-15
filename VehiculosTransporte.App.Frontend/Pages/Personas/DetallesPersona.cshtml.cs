@@ -11,16 +11,23 @@ namespace VehiculosTransporte.App.Frontend.Pages
 {
     public class DetallesPersonaModel : PageModel
     {
-        private readonly IRepositorioPersonas repositorioPersonas
-.GetPersona(PersonaId);
-            if(persona== null)
+        private readonly IRepositorioPersonas repositorioPersonas;
+        public Persona persona { get; set; }
+
+        public DetallesPersonaModel()
+        {
+            this.repositorioPersonas = new RepositorioPersonas(new VehiculosTransporte.App.Persistencia.AppContext());
+        }
+
+        public IActionResult OnGet(string personaId)
+        {
+            persona = repositorioPersonas.GetPersona(Int32.Parse(personaId));
+            if (persona == null)
             {
                 return RedirectToPage("./NotFound");
             }
             else
-            {
                 return Page();
-            }
         }
     }
 }
