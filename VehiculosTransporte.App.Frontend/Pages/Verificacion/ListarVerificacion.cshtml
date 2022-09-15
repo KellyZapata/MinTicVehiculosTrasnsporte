@@ -1,0 +1,38 @@
+﻿@page
+@model VehiculosTransporte.App.Frontend.Pages.ListarVerificacion
+@{
+}
+<h1>Verificacion</h1>
+    <table class="table table-bordered" id="tablaVerificacion">
+    <thead>
+        <tr>
+        <th scope="col">Id</th>
+        <th scope="col">MecanicoId</th>
+        <th scope="col">VehiculoId</th>
+        <th scope="col">Nivel_Aceite</th>
+        <th scope="col">Nivel_Liquido_frenos</th>
+        <th scope="col">Nivel_Refrigerante</th>
+        <th scope="col">Nivel_Liquido_direccion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var verificacion in Model.verificaciones){
+            <tr>
+            <td>@verificacion.Id</td>
+            <td>@verificacion.MecanicoId</td>
+            <td>@verificacion.VehiculoId</td>
+            <td>@verificacion.Nivel_Aceite</td>
+            <td>@verificacion.Nivel_Liquido_frenos</td>
+            <td>@verificacion.Nivel_Refrigerante</td>
+            <td>@verificacion.Nivel_Liquido_direccion</td>
+            <td><a class="btn btn-primary table-btn" asp-page="./DetallesVerificacion" asp-route-verificacionId="@verificacion.Id">Detalles</a>
+            <a class="btn btn-primary table-btn" asp-page="./EditarVerificacion" asp-route-verificacionId="@verificacion.Id">Editar</a>
+            <a asp-page="./EditarVerificacion"
+            onclick="return confirm('Seguro que deseas eliminar esta verificacion?');"
+            asp-page-handler="Delete" asp-route-VerificacionId="@verificacion.Id">Delete</a>
+            </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+    <a asp-page="./EditarVerificacion" class="btn btn-primary table-btn">Adicionar verificacion</a>
