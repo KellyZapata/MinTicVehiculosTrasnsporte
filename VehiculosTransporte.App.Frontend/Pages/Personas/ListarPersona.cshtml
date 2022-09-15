@@ -24,8 +24,8 @@
             <td>@persona.Cedula</td>
             <td>@persona.Numero_Telefono</td>
             <td>@persona.Direccion</td>
-            <td><a class="btn btn-primary table-btn" asp-page="./DetallesPersona" asp-route-vehiculoId="@persona.Id">Detalles</a>
-            <a class="btn btn-primary table-btn" asp-page="./EditarPersona" asp-route-vehiculoId="@persona.Id">Editar</a>
+            <td><a class="btn btn-primary table-btn" asp-page="./DetallesPersona" asp-route-personaId="@persona.Id">Detalles</a>
+            <a class="btn btn-primary table-btn" asp-page="./EditarPersona" asp-route-personaId="@persona.Id">Editar</a>
             <a asp-page="./EditarPersona"
             onclick="return confirm('Seguro que deseas eliminar este Persona?');"
             asp-page-handler="Delete" asp-route-PersonaId="@persona.Id">Delete</a>
