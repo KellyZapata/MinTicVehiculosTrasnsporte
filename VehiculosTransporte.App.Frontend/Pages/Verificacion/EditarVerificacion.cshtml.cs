@@ -12,13 +12,20 @@ namespace VehiculosTransporte.App.Frontend.Pages
     public class EditarVerificacionModel : PageModel
     {
         private readonly IRepositorioVerificaciones repositorioVerificaciones;
+        private readonly IRepositorioVehiculos repositorioVehiculos;
+        private readonly IRepositorioMecanicos repositorioMecanicos;
+
         [BindProperty]
         public Verificacion verificacion {get; set;}
+
+        public IEnumerable<Vehiculo> vehiculos {get; set;}
+        public IEnumerable<Mecanico> mecanicos {get; set;}
 
         public EditarVerificacionModel()
         {
             this.repositorioVerificaciones = new RepositorioVerificaciones(new VehiculosTransporte.App.Persistencia.AppContext());
-
+            this.repositorioVehiculos = new RepositorioVehiculos(new VehiculosTransporte.App.Persistencia.AppContext());
+            this.repositorioMecanicos = new RepositorioMecanicos(new VehiculosTransporte.App.Persistencia.AppContext());
         }
        public IActionResult OnGet(int? VerificacionId)
         {
@@ -30,6 +37,8 @@ namespace VehiculosTransporte.App.Frontend.Pages
             {
                 verificacion = new Verificacion();
             }
+            mecanicos = this.repositorioMecanicos.GetMecanicos();
+            vehiculos = this.repositorioVehiculos.GetVehiculos();
 
             if(verificacion == null)
             {

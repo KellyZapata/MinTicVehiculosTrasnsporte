@@ -2,16 +2,17 @@
 @model VehiculosTransporte.App.Frontend.Pages.EditarVerificacionModel
 @{
 }
-<h2> Editar Verificacion </h2>
+
+<h2> Verificacion </h2>
 <form method="post">
     <input type="hidden" asp-for="verificacion.Id"/>
     <div class="form-group">
-        <label asp-for="verificacion.MecanicoId"></label>
-        <input asp-for="verificacion.MecanicoId" type="text" class="form-control">
+        @Html.LabelFor(x => Model.verificacion.MecanicoId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DropDownListFor(x => Model.verificacion.MecanicoId, new SelectList(Model.mecanicos, "Id", "Nombres"), htmlAttributes: new { @class = "form-control", id = "MecanicoId"})
     </div>
     <div class="form-group">
-        <label asp-for="verificacion.VehiculoId"></label>
-        <input asp-for="verificacion.VehiculoId" type="text" class="form-control">
+        @Html.LabelFor(x => Model.verificacion.VehiculoId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DropDownListFor(x => Model.verificacion.VehiculoId, new SelectList(Model.vehiculos, "Id", "Placa"), htmlAttributes: new { @class = "form-control", id = "MecanicoId"})
     </div>
     <div class="form-group">
         <label asp-for="verificacion.Nivel_Aceite"></label>
@@ -31,7 +32,5 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Guardar</button>
-
-
 
 </form>

@@ -7,8 +7,8 @@
     <thead>
         <tr>
         <th scope="col">Id</th>
-        <th scope="col">MecanicoId</th>
-        <th scope="col">VehiculoId</th>
+        <th scope="col">Mecanico</th>
+        <th scope="col">Vehiculo</th>
         <th scope="col">Nivel_Aceite</th>
         <th scope="col">Nivel_Liquido_frenos</th>
         <th scope="col">Nivel_Refrigerante</th>
@@ -19,8 +19,8 @@
         @foreach (var verificacion in Model.verificaciones){
             <tr>
             <td>@verificacion.Id</td>
-            <td>@verificacion.MecanicoId</td>
-            <td>@verificacion.VehiculoId</td>
+            <td>@verificacion.Mecanico.Nombres</td>
+            <td>@verificacion.Vehiculo.Placa</td>
             <td>@verificacion.Nivel_Aceite</td>
             <td>@verificacion.Nivel_Liquido_frenos</td>
             <td>@verificacion.Nivel_Refrigerante</td>
