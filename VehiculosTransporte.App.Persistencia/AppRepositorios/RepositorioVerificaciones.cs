@@ -32,7 +32,7 @@ namespace VehiculosTransporte.App.Persistencia
 
         IEnumerable<Verificacion> IRepositorioVerificaciones.GetVerificaciones()
         {
-            return _appContext.Verificaciones;
+            return _appContext.Verificaciones.Include("Vehiculo").Include("Mecanico");
         }
 
         Verificacion IRepositorioVerificaciones.GetVerificacion(int idVerificacion)
@@ -45,7 +45,8 @@ namespace VehiculosTransporte.App.Persistencia
             var verificacionEncontrada = _appContext.Verificaciones.FirstOrDefault(p => p.Id == verificacion.Id);
             if (verificacionEncontrada != null)
             {
-                verificacionEncontrada.Vehiculo = verificacion.Vehiculo;
+                verificacionEncontrada.VehiculoId = verificacion.VehiculoId;
+                verificacionEncontrada.MecanicoId = verificacion.MecanicoId;
                 verificacionEncontrada.Nivel_Aceite = verificacion.Nivel_Aceite;
                 verificacionEncontrada.Nivel_Liquido_frenos = verificacion.Nivel_Liquido_frenos;
                 verificacionEncontrada.Nivel_Refrigerante = verificacion.Nivel_Refrigerante;
