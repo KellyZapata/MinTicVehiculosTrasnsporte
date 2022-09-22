@@ -32,7 +32,7 @@ namespace VehiculosTransporte.App.Persistencia
 
         IEnumerable<Persona> IRepositorioPersonas.GetPersonas()
         {
-            return _appContext.Personas;
+            return _appContext.Personas.Include("Vehiculo");
         }
 
         Persona IRepositorioPersonas.GetPersona(int idPersona)

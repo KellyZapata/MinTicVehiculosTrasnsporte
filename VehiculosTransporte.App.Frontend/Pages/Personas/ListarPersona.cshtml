@@ -28,7 +28,12 @@
             <td>@persona.Numero_Telefono</td>
             <td>@persona.Direccion</td>
             <td>@persona.Discriminator</td>
-            <td>@persona.VehiculoId</td>
+            @if (persona.Discriminator == "Conductor" || persona.Discriminator == "Propietario"){
+                <td>@persona.Vehiculo.Placa</td>
+            }
+            else{
+                <td></td>
+            }
             <td><a class="btn btn-dark" asp-page="./DetallesPersona" asp-route-personaId="@persona.Id"><i class="fa-solid fa-circle-info"></i></a>
             <a class="btn btn-dark" asp-page="./EditarPersona" asp-route-personaId="@persona.Id"><i class="fa-solid fa-pen-to-square"></i></a>
             <a class="btn btn-dark" asp-page="./EditarPersona"
@@ -39,5 +44,3 @@
         }
     </tbody>
     </table>
-
-    

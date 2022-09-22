@@ -28,6 +28,7 @@ namespace VehiculosTransporte.App.Dominio
         [Required(ErrorMessage = "El tipo es obligatorio")]
         public string Discriminator {get;set;}
         [ForeignKey("Vehiculo")]
+        [Display(Name = "Vehículo")]
         public virtual int? VehiculoId {get;set;}
         public virtual Vehiculo Vehiculo {get;set;}
     }

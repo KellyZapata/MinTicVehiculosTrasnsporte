@@ -6,7 +6,7 @@ namespace VehiculosTransporte.App.Dominio
     public class CheckDateRangeAttribute: ValidationAttribute {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
             DateTime dt = (DateTime)value;
-            if (dt >= DateTime.UtcNow & dt <= DateTime.UtcNow.AddYears(1)) {
+            if (dt >= DateTime.UtcNow.AddYears(-1) & dt <= DateTime.UtcNow.AddYears(1)) {
                 return ValidationResult.Success;
             }
 
