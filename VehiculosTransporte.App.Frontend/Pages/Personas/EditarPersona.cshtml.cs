@@ -12,13 +12,15 @@ namespace VehiculosTransporte.App.Frontend.Pages
     public class EditarPersonaModel : PageModel
     {
         private readonly IRepositorioPersonas repositorioPersonas;
+        private readonly IRepositorioVehiculos repositorioVehiculos;
         [BindProperty]
         public Persona persona {get; set;}
+        public IEnumerable<Vehiculo> vehiculos {get; set;}
 
         public EditarPersonaModel()
         {
             this.repositorioPersonas = new RepositorioPersonas(new VehiculosTransporte.App.Persistencia.AppContext());
-
+            this.repositorioVehiculos = new RepositorioVehiculos(new VehiculosTransporte.App.Persistencia.AppContext());
         }
        public IActionResult OnGet(int? PersonaId)
         {
@@ -30,7 +32,7 @@ namespace VehiculosTransporte.App.Frontend.Pages
             {
                 persona = new Persona();
             }
-
+            vehiculos = repositorioVehiculos.GetVehiculos();
             if(persona == null)
             {
                 return RedirectToPage("./NotFound");

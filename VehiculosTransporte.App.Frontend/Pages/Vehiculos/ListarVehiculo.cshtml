@@ -14,6 +14,7 @@
         <th scope="col">Modelo</th>
         <th scope="col">Expiración Técnico Mecánica</th>
         <th scope="col">Expiración Soat</th>
+        <th scope="col">Tipo</th>
         <th><a asp-page="./EditarVehiculo" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Añadir Vehículo</a></th>
 
         </tr>
@@ -27,6 +28,7 @@
             <td>@vehiculo.Modelo</td>
             <td>@vehiculo.Expiracion_tenicomecanica</td>
             <td>@vehiculo.Expiracion_soat</td>
+            <td>@vehiculo.Discriminator</td>
             <td><a class="btn btn-dark" asp-page="./DetallesVehiculo" asp-route-vehiculoId="@vehiculo.Id"><i class="fa-solid fa-circle-info"></i></a>
             <a class="btn btn-dark" asp-page="./EditarVehiculo" asp-route-vehiculoId="@vehiculo.Id"><i class="fa-solid fa-pen-to-square"></i></a>
             <a class="btn btn-dark" asp-page="./EditarVehiculo"

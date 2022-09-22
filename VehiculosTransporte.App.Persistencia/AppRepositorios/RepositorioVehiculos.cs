@@ -44,6 +44,7 @@ namespace VehiculosTransporte.App.Persistencia
                 vehiculoEncontrado.Expiracion_soat = vehiculo.Expiracion_soat;
                 vehiculoEncontrado.Expiracion_seguro_contractual = vehiculo.Expiracion_seguro_contractual;
                 vehiculoEncontrado.Expiracion_extra_contractual = vehiculo.Expiracion_extra_contractual;
+                vehiculoEncontrado.Discriminator = vehiculo.Discriminator;
                 _appContext.SaveChanges();
             }
             return vehiculoEncontrado;

@@ -31,8 +31,41 @@
         <input asp-for="persona.Direccion" type="text" class="form-control">
         <span class="text-danger" asp-validation-for="persona.Direccion"></span>
     </div>
+    <div class="form-group" id="vehiculodiv">
+        <label asp-for="persona.VehiculoId"></label>
+        @Html.DropDownListFor(x => Model.persona.VehiculoId, new SelectList(Model.vehiculos, "Id", "Placa"), htmlAttributes: new { @class = "form-control", required = "required", @id = "vehiculo" })
+        <span class="text-danger" asp-validation-for="persona.VehiculoId"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="persona.Discriminator"></label>
+        <select asp-for="persona.Discriminator" class="form-control" onchange="TipoChange()" id="tipo">
+            <option value="Conductor">Conductor</option>
+            <option value="Mecanico">Mecanico</option>
+            <option value="Auxiliar">Auxiliar</option>
+            <option value="JefeOperaciones">JefeOperaciones</option>
+            <option value="Propietario">Propietario</option>
+        </select>
+    </div>
 
     <button type="submit" class="btn btn-dark"><i class="fa-solid fa-floppy-disk"></i></button>
 
 </form>
 </div>
+
+<script type = "text/javascript">
+    window.onload = function() {
+        TipoChange();
+    };
+
+    function TipoChange() {
+        if (document.getElementById("tipo").value == "Conductor" || document.getElementById("tipo").value == "Propietario") {
+            $('#vehiculodiv').show();
+            $('#vehiculo').attr('required', 'required');
+        } else {
+            $('#vehiculodiv').hide();
+            $('#vehiculo').removeAttr('required');
+            $('#vehiculo').val(null);
+        }
+    }
+
+</script>

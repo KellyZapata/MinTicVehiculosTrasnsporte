@@ -32,7 +32,7 @@ namespace VehiculosTransporte.App.Persistencia
 
         IEnumerable<Persona> IRepositorioPersonas.GetPersonas()
         {
-            return _appContext.Personas;
+            return _appContext.Personas.Include("Vehiculo");
         }
 
         Persona IRepositorioPersonas.GetPersona(int idPersona)
@@ -50,6 +50,8 @@ namespace VehiculosTransporte.App.Persistencia
                 personaEncontrada.Cedula = persona.Cedula;
                 personaEncontrada.Numero_Telefono = persona.Numero_Telefono;
                 personaEncontrada.Direccion = persona.Direccion;
+                personaEncontrada.Discriminator = persona.Discriminator;
+                personaEncontrada.VehiculoId = persona.VehiculoId;
                 _appContext.SaveChanges();
             }
             return personaEncontrada;
