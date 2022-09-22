@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VehiculosTransporte.App.Dominio
 {
@@ -23,5 +24,11 @@ namespace VehiculosTransporte.App.Dominio
         [Required(ErrorMessage = "La dirección es obligatoria")]
         [StringLength(50, ErrorMessage = "La dirección no puede tener más de 50 caracteres")]
         public string Direccion {get;set;}
+        [Display(Name = "Tipo")]
+        [Required(ErrorMessage = "El tipo es obligatorio")]
+        public string Discriminator {get;set;}
+        [ForeignKey("Vehiculo")]
+        public virtual int? VehiculoId {get;set;}
+        public virtual Vehiculo Vehiculo {get;set;}
     }
 }

@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using VehiculosTransporte.App.Dominio;
 
 namespace VehiculosTransporte.App.Persistencia
@@ -22,6 +25,16 @@ namespace VehiculosTransporte.App.Persistencia
                 optionsBuilder
                 .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog=VehiculosTransporte");
             }
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Persona>()
+                .Property(x => x.Discriminator)
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
+
+            modelBuilder.Entity<Vehiculo>()
+                .Property(x => x.Discriminator)
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
         }
     }
 }

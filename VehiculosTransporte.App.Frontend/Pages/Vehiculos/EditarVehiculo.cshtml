@@ -41,6 +41,12 @@
         <input asp-for="vehiculo.Expiracion_extra_contractual" type="date" class="form-control">
         <span class="text-danger" asp-validation-for="vehiculo.Expiracion_extra_contractual"></span>
     </div>
+     <div class="form-group">
+        <select asp-for="vehiculo.Discriminator">
+            <option value="Bus">Bus</option>
+            <option value="Microbus">Microbus</option>
+        </select>
+    </div>
 
     <button type="submit" class="btn btn-dark"><i class="fa-solid fa-floppy-disk"></i></button>
 

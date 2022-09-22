@@ -13,8 +13,9 @@
         <th scope="col">Cédula</th>
         <th scope="col">Número Teléfono</th>
         <th scope="col">Dirección</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Vehiculo</th>
         <th><a asp-page="./EditarPersona" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Añadir Persona</a></th>
-        
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,8 @@
             <td>@persona.Cedula</td>
             <td>@persona.Numero_Telefono</td>
             <td>@persona.Direccion</td>
+            <td>@persona.Discriminator</td>
+            <td>@persona.VehiculoId</td>
             <td><a class="btn btn-dark" asp-page="./DetallesPersona" asp-route-personaId="@persona.Id"><i class="fa-solid fa-circle-info"></i></a>
             <a class="btn btn-dark" asp-page="./EditarPersona" asp-route-personaId="@persona.Id"><i class="fa-solid fa-pen-to-square"></i></a>
             <a class="btn btn-dark" asp-page="./EditarPersona"

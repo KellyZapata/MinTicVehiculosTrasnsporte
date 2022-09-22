@@ -50,6 +50,8 @@ namespace VehiculosTransporte.App.Persistencia
                 personaEncontrada.Cedula = persona.Cedula;
                 personaEncontrada.Numero_Telefono = persona.Numero_Telefono;
                 personaEncontrada.Direccion = persona.Direccion;
+                personaEncontrada.Discriminator = persona.Discriminator;
+                personaEncontrada.VehiculoId = persona.VehiculoId;
                 _appContext.SaveChanges();
             }
             return personaEncontrada;
