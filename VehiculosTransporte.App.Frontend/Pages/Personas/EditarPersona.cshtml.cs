@@ -42,6 +42,10 @@ namespace VehiculosTransporte.App.Frontend.Pages
         }
         public IActionResult OnPost()
         {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
             if(persona.Id > 0)
             {
                 persona = this.repositorioPersonas.UpdatePersona(persona);

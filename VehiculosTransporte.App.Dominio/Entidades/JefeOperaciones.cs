@@ -6,6 +6,5 @@ using System.Threading.Tasks;
 namespace VehiculosTransporte.App.Dominio
 {
     public class JefeOperaciones: Persona{
-    
     }
 }

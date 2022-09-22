@@ -43,6 +43,10 @@ namespace VehiculosTransporte.App.Frontend.Pages
         }
         public IActionResult OnPost()
         {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
             if(repuesto.Id > 0)
             {
                 repuesto = this.repositorioRepuestos.UpdateRepuesto(repuesto);

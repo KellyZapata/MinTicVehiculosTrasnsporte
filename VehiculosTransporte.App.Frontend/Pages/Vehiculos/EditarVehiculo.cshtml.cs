@@ -42,6 +42,10 @@ namespace VehiculosTransporte.App.Frontend.Pages
         }
         public IActionResult OnPost()
         {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
             if(vehiculo.Id > 0)
             {
                 vehiculo = this.repositorioVehiculos.UpdateVehiculo(vehiculo);

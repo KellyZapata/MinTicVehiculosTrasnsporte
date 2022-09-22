@@ -11,12 +11,20 @@ namespace VehiculosTransporte.App.Dominio
         public string Modelo {get;set;}
 
         [DataType(DataType.Date)]
+        [Display(Name = "Fecha de la tecnicomecanica")]
+        [Required(ErrorMessage = "La fecha de la tecnicomecanica es obligatoria")]
         public DateTime Expiracion_tenicomecanica { get; set; }
         [DataType(DataType.Date)]
+        [Display(Name = "Fecha de la póliza de seguro")]
+        [Required(ErrorMessage = "La fecha de la póliza de seguro es obligatoria")]
         public DateTime Expiracion_soat { get; set; }
         [DataType(DataType.Date)]
+        [Display(Name = "Fecha del seguro contractual")]
+        [Required(ErrorMessage = "La fecha del seguro contractual es obligatoria")]
         public DateTime Expiracion_seguro_contractual { get; set; }
         [DataType(DataType.Date)]
+        [Display(Name = "Fecha del seguro extra contractual")]
+        [Required(ErrorMessage = "La fecha del seguro extra contractual es obligatoria")]
         public DateTime Expiracion_extra_contractual { get; set; }
     }
 }

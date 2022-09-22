@@ -51,6 +51,10 @@ namespace VehiculosTransporte.App.Frontend.Pages
         }
         public IActionResult OnPost()
         {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
             if(verificacion.Id > 0)
             {
                 verificacion = this.repositorioVerificaciones.UpdateVerificacion(verificacion);

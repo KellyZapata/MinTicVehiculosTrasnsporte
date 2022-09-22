@@ -2,8 +2,6 @@ using System;
 
 namespace VehiculosTransporte.App.Dominio
 {
-
-public class Mecanico: Persona{
-}
-
+    public class Mecanico: Persona{
+    }
 }
