@@ -2,6 +2,7 @@
 @model VehiculosTransporte.App.Frontend.Pages.ListarVehiculo
 @{
 }
+<h1>Vehículos</h1>
 
     <table class="table table-bordered" id="tablaVehiculos">
     <thead>
@@ -10,9 +11,10 @@
         <th scope="col">Placa</th>
         <th scope="col">Marca</th>
         <th scope="col">Modelo</th>
-        <th scope="col">Expiracion Tenicomecanica</th>
-        <th scope="col">Expiracion Soat</th>
-        <th scope="col">Opciones</th>
+        <th scope="col">Expiración Técnico Mecánica</th>
+        <th scope="col">Expiración Soat</th>
+        <th><a asp-page="./EditarVehiculo" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Añadir Vehículo</a></th>
+
         </tr>
     </thead>
     <tbody>
@@ -24,14 +26,13 @@
             <td>@vehiculo.Modelo</td>
             <td>@vehiculo.Expiracion_tenicomecanica</td>
             <td>@vehiculo.Expiracion_soat</td>
-            <td><a class="btn btn-primary table-btn" asp-page="./DetallesVehiculo" asp-route-vehiculoId="@vehiculo.Id">Detalles</a>
-            <a class="btn btn-primary table-btn" asp-page="./EditarVehiculo" asp-route-vehiculoId="@vehiculo.Id">Editar</a>
-            <a asp-page="./EditarVehiculo"
+            <td><a class="btn btn-dark" asp-page="./DetallesVehiculo" asp-route-vehiculoId="@vehiculo.Id"><i class="fa-solid fa-circle-info"></i></a>
+            <a class="btn btn-dark" asp-page="./EditarVehiculo" asp-route-vehiculoId="@vehiculo.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-dark" asp-page="./EditarVehiculo"
             onclick="return confirm('Seguro que deseas eliminar este vehiculo?');"
-            asp-page-handler="Delete" asp-route-VehiculoId="@vehiculo.Id">Delete</a>
+            asp-page-handler="Delete" asp-route-VehiculoId="@vehiculo.Id"><i class="fa-solid fa-trash-can"></i></a>
             </td>
             </tr>
         }
     </tbody>
     </table>
-    <a asp-page="./EditarVehiculo" class="btn btn-primary table-btn">Adicionar vehiculo</a>

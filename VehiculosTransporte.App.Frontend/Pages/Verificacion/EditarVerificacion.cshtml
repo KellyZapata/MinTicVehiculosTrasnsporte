@@ -3,34 +3,42 @@
 @{
 }
 
-<h2> Verificacion </h2>
+<h2> Verificación </h2>
 <form method="post">
     <input type="hidden" asp-for="verificacion.Id"/>
     <div class="form-group">
         @Html.LabelFor(x => Model.verificacion.MecanicoId, htmlAttributes: new { @class = "control-label col-md-2" })
         @Html.DropDownListFor(x => Model.verificacion.MecanicoId, new SelectList(Model.mecanicos, "Id", "Nombres"), htmlAttributes: new { @class = "form-control", id = "MecanicoId"})
+        <span class="text-danger" asp-validation-for="verificacion.MecanicoId"></span>
     </div>
+
     <div class="form-group">
         @Html.LabelFor(x => Model.verificacion.VehiculoId, htmlAttributes: new { @class = "control-label col-md-2" })
         @Html.DropDownListFor(x => Model.verificacion.VehiculoId, new SelectList(Model.vehiculos, "Id", "Placa"), htmlAttributes: new { @class = "form-control", id = "MecanicoId"})
+        <span class="text-danger" asp-validation-for="verificacion.VehiculoId"></span>
     </div>
     <div class="form-group">
         <label asp-for="verificacion.Nivel_Aceite"></label>
         <input asp-for="verificacion.Nivel_Aceite" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="verificacion.Nivel_Aceite"></span>
     </div>
     <div class="form-group">
         <label asp-for="verificacion.Nivel_Liquido_frenos"></label>
         <input asp-for="verificacion.Nivel_Liquido_frenos" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="verificacion.Nivel_Liquido_frenos"></span>
     </div>
     <div class="form-group">
         <label asp-for="verificacion.Nivel_Refrigerante"></label>
         <input asp-for="verificacion.Nivel_Refrigerante" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="verificacion.Nivel_Refrigerante"></span>
+
     </div>
     <div class="form-group">
         <label asp-for="verificacion.Nivel_Liquido_direccion"></label>
         <input asp-for="verificacion.Nivel_Liquido_direccion" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="verificacion.Nivel_Liquido_direccion"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-dark"><i class="fa-solid fa-floppy-disk"></i></button>
 
 </form>

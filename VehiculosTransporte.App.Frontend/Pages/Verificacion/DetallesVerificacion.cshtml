@@ -21,6 +21,8 @@
         <th scope="col">Id</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Precio</th>
+    <th><a asp-page="../Repuestos/EditarRepuesto" class="btn btn-dark" asp-route-VerificacionId="@Model.verificacion.Id"><i class="fa-solid fa-plus"></i>Añadir Repuesto</a></th>
+
         </tr>
     </thead>
     <tbody>
@@ -29,13 +31,12 @@
             <td>@repuesto.Id</td>
             <td>@repuesto.Descripcion</td>
             <td>@repuesto.Precio</td>
-            <td><a class="btn btn-primary table-btn" asp-page="../Repuestos/EditarRepuesto" asp-route-repuestoId="@repuesto.Id">Editar</a>
-                <a asp-page="../Repuestos/EditarRepuesto"
+            <td><a class="btn btn-dark" asp-page="../Repuestos/EditarRepuesto" asp-route-repuestoId="@repuesto.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a class="btn btn-dark" asp-page="../Repuestos/EditarRepuesto"
                 onclick="return confirm('Seguro que deseas eliminar este repuesto?');"
-                asp-page-handler="Delete" asp-route-repuestoId="@repuesto.Id">Delete</a>
+                asp-page-handler="Delete" asp-route-repuestoId="@repuesto.Id"><i class="fa-solid fa-trash-can"></i></a>
             </td>
             </tr>
         }
     </tbody>
     </table>
-    <a asp-page="../Repuestos/EditarRepuesto" class="btn btn-primary table-btn" asp-route-VerificacionId="@Model.verificacion.Id">Adicionar repuesto</a>

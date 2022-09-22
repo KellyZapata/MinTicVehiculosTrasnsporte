@@ -8,26 +8,29 @@
     <div class="form-group">
         <label asp-for="persona.Nombres"></label>
         <input asp-for="persona.Nombres" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="persona.Nombres"></span>
     </div>
     <div class="form-group">
         <label asp-for="persona.Apellidos"></label>
         <input asp-for="persona.Apellidos" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="persona.Apellidos"></span>
     </div>
     <div class="form-group">
         <label asp-for="persona.Cedula"></label>
         <input asp-for="persona.Cedula" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="persona.Cedula"></span>
     </div>
     <div class="form-group">
         <label asp-for="persona.Numero_Telefono"></label>
         <input asp-for="persona.Numero_Telefono" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="persona.Numero_Telefono"></span>
     </div>
     <div class="form-group">
         <label asp-for="persona.Direccion"></label>
         <input asp-for="persona.Direccion" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="persona.Direccion"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
-
-
+    <button type="submit" class="btn btn-dark"><i class="fa-solid fa-floppy-disk"></i></button>
 
 </form>

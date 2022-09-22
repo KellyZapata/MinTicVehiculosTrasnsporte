@@ -2,7 +2,7 @@
 @model VehiculosTransporte.App.Frontend.Pages.ListarVerificacion
 @{
 }
-<h1>Verificacion</h1>
+<h1>Verificación</h1>
     <table class="table table-bordered" id="tablaVerificacion">
     <thead>
         <tr>
@@ -13,6 +13,8 @@
         <th scope="col">Nivel_Liquido_frenos</th>
         <th scope="col">Nivel_Refrigerante</th>
         <th scope="col">Nivel_Liquido_direccion</th>
+        <th><a asp-page="./EditarVerificacion" class="btn btn-dark" ><i class="fa-solid fa-plus"></i> Añadir Verificación</a></th>
+
         </tr>
     </thead>
     <tbody>
@@ -25,14 +27,13 @@
             <td>@verificacion.Nivel_Liquido_frenos</td>
             <td>@verificacion.Nivel_Refrigerante</td>
             <td>@verificacion.Nivel_Liquido_direccion</td>
-            <td><a class="btn btn-primary table-btn" asp-page="./DetallesVerificacion" asp-route-verificacionId="@verificacion.Id">Detalles</a>
-            <a class="btn btn-primary table-btn" asp-page="./EditarVerificacion" asp-route-verificacionId="@verificacion.Id">Editar</a>
-            <a asp-page="./EditarVerificacion"
+            <td><a class="btn btn-dark"  asp-page="./DetallesVerificacion" asp-route-verificacionId="@verificacion.Id"><i class="fa-solid fa-circle-info"></i></a>
+            <a class="btn btn-dark"  asp-page="./EditarVerificacion" asp-route-verificacionId="@verificacion.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-dark" asp-page="./EditarVerificacion"
             onclick="return confirm('Seguro que deseas eliminar esta verificacion?');"
-            asp-page-handler="Delete" asp-route-VerificacionId="@verificacion.Id">Delete</a>
+            asp-page-handler="Delete" asp-route-VerificacionId="@verificacion.Id"><i class="fa-solid fa-trash-can"></i></a>
             </td>
             </tr>
         }
     </tbody>
     </table>
-    <a asp-page="./EditarVerificacion" class="btn btn-primary table-btn">Adicionar verificacion</a>
