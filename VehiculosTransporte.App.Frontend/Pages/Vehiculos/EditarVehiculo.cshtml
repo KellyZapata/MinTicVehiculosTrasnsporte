@@ -23,33 +23,32 @@
     </div>
     <div class="form-group">
         <label asp-for="vehiculo.Expiracion_tenicomecanica"></label>
-        <input asp-for="vehiculo.Expiracion_tenicomecanica" type="date" class="form-control">
+        <input asp-for="vehiculo.Expiracion_tenicomecanica" type="date" class="form-control" placeholder="MM/DD/YYYY">
         <span class="text-danger" asp-validation-for="vehiculo.Expiracion_tenicomecanica"></span>
     </div>
     <div class="form-group">
         <label asp-for="vehiculo.Expiracion_soat"></label>
-        <input asp-for="vehiculo.Expiracion_soat" type="date" class="form-control">
+        <input asp-for="vehiculo.Expiracion_soat" type="date" class="form-control" placeholder="MM/DD/YYYY">
         <span class="text-danger" asp-validation-for="vehiculo.Expiracion_soat"></span>
     </div>
     <div class="form-group">
         <label asp-for="vehiculo.Expiracion_seguro_contractual"></label>
-        <input asp-for="vehiculo.Expiracion_seguro_contractual" type="date" class="form-control">
+        <input asp-for="vehiculo.Expiracion_seguro_contractual" type="date" class="form-control" placeholder="MM/DD/YYYY" />
         <span class="text-danger" asp-validation-for="vehiculo.Expiracion_seguro_contractual"></span>
     </div>
     <div class="form-group">
         <label asp-for="vehiculo.Expiracion_extra_contractual"></label>
-        <input asp-for="vehiculo.Expiracion_extra_contractual" type="date" class="form-control">
+        <input asp-for="vehiculo.Expiracion_extra_contractual" type="date" class="form-control" placeholder="MM/DD/YYYY">
         <span class="text-danger" asp-validation-for="vehiculo.Expiracion_extra_contractual"></span>
     </div>
      <div class="form-group">
-        <select asp-for="vehiculo.Discriminator">
+        <label asp-for="vehiculo.Discriminator"></label>
+        <select asp-for="vehiculo.Discriminator" class="form-control">
             <option value="Bus">Bus</option>
             <option value="Microbus">Microbus</option>
         </select>
     </div>
 
     <button type="submit" class="btn btn-dark"><i class="fa-solid fa-floppy-disk"></i></button>
-
-
 
 </form>
